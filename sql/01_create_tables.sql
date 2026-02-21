@@ -25,7 +25,6 @@ transaction_date TIMESTAMP,
 transaction_type VARCHAR(50),
 amount DECIMAL(15,2),
 balance_after DECIMAL(15,2),
-description TEXT
 );
 
 
