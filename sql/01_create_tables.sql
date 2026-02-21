@@ -6,7 +6,6 @@ last_name VARCHAR(100),
 age INT,
 gender VARCHAR(10),
 city VARCHAR(100),
-country VARCHAR(100),
 account_opening_date DATE
 );
 -- Table comptes
