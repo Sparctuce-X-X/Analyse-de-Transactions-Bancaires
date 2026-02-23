@@ -1,10 +1,11 @@
-import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-from tabulate import tabulate
+from sqlalchemy import create_engine
 
-url = "https://www.insee.fr/fr/statistiques/fichier/6800675/v_commune_2023.csv"
-url_backup = "https://minio.lab.sspcloud.fr/lgaliana/data/python-ENSAE/cog_2023.csv"
+engine = create_engine("postgresql://analyst:password123@localhost:5432/bank_analytics")
 
-df = pd.read_csv('cog_2023.csv');
+csv_path = "../data/raw/Comprehensive_Banking_Database.csv"
 
+df = pd.read_csv(csv_path)
+
+print(df.groupby("Customer ID")["TransactionID"].nunique().sort_values(ascending=False).head(10)
+)
