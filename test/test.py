@@ -1,11 +1,12 @@
+import matplotlib.pyplot as plt
 import pandas as pd
-from sqlalchemy import create_engine
 
-engine = create_engine("postgresql://analyst:password123@localhost:5432/bank_analytics")
+x = [1, 2, 3, 4]
+y = [10, 20, 15, 30]
 
-csv_path = "../data/raw/Comprehensive_Banking_Database.csv"
-
-df = pd.read_csv(csv_path)
-
-print(df.groupby("Customer ID")["TransactionID"].nunique().sort_values(ascending=False).head(10)
-)
+plt.figure(figsize=(6, 4))
+plt.plot(x, y)
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Test simple")
+plt.show()
